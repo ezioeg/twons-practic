@@ -26,7 +26,7 @@ Upon clicking a product, users should be navigated to the Product Detail screen,
 
 ## Technologies Used
 
-- **React Native CLI**: 0.76.7 version
+- **React Native**: 0.76.7 version
 - **React**: 18.3.1 version
 - **Lucide Icons**: lucide-react-native
 - **SVG Icons**: react-native-svg
