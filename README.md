@@ -6,22 +6,24 @@
 
 Twons Practic is a technical test for React Native CLI, where you are required to create a design within a 5-day time limit. The project involves building a navigation system between two or more screens. The Home screen should feature an e-commerce clothing store design, including:
 
-Input fields
-A banner with active dots
-Category scroll
-A sale timer
-A subcategory scroll
-Product listings
-A floating tab bar
+- Input fields
+- A banner with active dots
+- Category scroll
+- A sale timer
+- A subcategory scroll
+- Product listings
+- A floating tab bar
+
 Upon clicking a product, users should be navigated to the Product Detail screen, which includes:
 
-A header with an image and floating buttons
-An image scroll within the header, allowing users to click and set the images as the header image
-Product information
-Product rating (star)
-A scrollable list of sizes
-A color dropdown
-A floating bottom tab bar displaying the price and a purchase button
+- A header with an image and floating buttons
+- An image scroll within the header, allowing users to click and set the images as the header image
+- Product information
+- Product rating (star)
+- A scrollable list of sizes
+- A color dropdown
+- A floating bottom tab bar displaying the price and a purchase button
+
 All of this design should include icons and images. The test utilizes React Native, @react-native-picker/picker for the dropdown, lucide-react-native for icons, and react-native-svg for additional icons.
 
 ## Technologies Used
