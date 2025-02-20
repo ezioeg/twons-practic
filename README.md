@@ -24,14 +24,12 @@ Upon clicking a product, users should be navigated to the Product Detail screen,
 - A color dropdown
 - A floating bottom tab bar displaying the price and a purchase button
 
-All of this design should include icons and images. The test utilizes React Native, @react-native-picker/picker for the dropdown, lucide-react-native for icons, and react-native-svg for additional icons.
-
 ## Technologies Used
 
-- **React Native**
-- **Expo**
-- **Fetch**
-- **React Native Picker**
+- **React Native CLI**: 0.76.7 version
+- **Lucide React Native** (icons): lucide-react-native
+- **SVG React Native** (icons): react-native-svg
+- **React Native Picker (dropdown)**: @react-native-picker/picker
 
 ## Setup
 
