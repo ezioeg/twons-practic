@@ -1,16 +1,18 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: 'green',
-    justifyContent: 'center',
+  tabButton: {
+    height: 75,
     alignItems: 'center',
+    justifyContent: 'center',
   },
-  safeArea: {
-    flex: 1,
-    justifyContent: 'center',
+  selectedCircle: {
+    width: 65,
+    height: 65,
+    borderRadius: 40,
     alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ffff',
   },
 });
 
