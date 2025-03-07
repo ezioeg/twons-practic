@@ -8,19 +8,15 @@ import {
   getSecondCategoryButtonStyle,
   getSecondCategoryTextStyle,
 } from '../../utils';
-import {ProductNavigationProp} from '../../types';
+import {Category, Product, ProductScreenNavigation} from '../../types';
 import styles from './styles';
 
 export default function FlashSales() {
-  const navigation = useNavigation<ProductNavigationProp>();
-  const [selected, setSelected] = useState('Newest');
+  const navigation = useNavigation<ProductScreenNavigation>();
+  const [selected, setSelected] = useState<Category>('Newest');
   const [time, setTime] = useState({hours: 2, minutes: 12, seconds: 56});
 
-  // Obtener los products de la categoría seleccionada
-  const {selectedCategory, products} = getProductsByCategory(
-    mock_flashsales,
-    selected,
-  );
+  const products: Product[] = getProductsByCategory(mock_flashsales, selected);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -79,20 +75,20 @@ export default function FlashSales() {
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.secondCategoryScrollContainer}>
-        {mock_flashsales.map(cat => (
+        {mock_flashsales.map(category => (
           <TouchableOpacity
-            key={cat.id}
-            onPress={() => setSelected(cat.name)}
+            key={category.id}
+            onPress={() => setSelected(category.name as Category)}
             style={[
               styles.secondCategoryButton,
-              getSecondCategoryButtonStyle(selected === cat.name),
+              getSecondCategoryButtonStyle(selected === category.name),
             ]}>
             <Text
               style={[
                 styles.secondCategoryTextButton,
-                getSecondCategoryTextStyle(selected === cat.name),
+                getSecondCategoryTextStyle(selected === category.name),
               ]}>
-              {cat.name}
+              {category.name}
             </Text>
           </TouchableOpacity>
         ))}
@@ -106,7 +102,7 @@ export default function FlashSales() {
             onPress={() =>
               navigation.navigate('Product', {
                 product: product,
-                category: selectedCategory?.name,
+                category: selected,
               })
             }>
             <Image source={product.image} style={styles.productImage} />

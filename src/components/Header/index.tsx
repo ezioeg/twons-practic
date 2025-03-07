@@ -3,11 +3,12 @@ import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {ArrowLeftIcon, HeartIcon} from '../Icons';
 import {mock_product} from '../../mock';
+import {Product} from '../../types';
 import styles from './styles';
 
-export default function ProductHeader({product}: any) {
+export default function ProductHeader({product}: {product: Product}) {
   const navigation = useNavigation();
-  const [selectedImage, setSelectedImage] = useState('');
+  const [selectedImage, setSelectedImage] = useState(undefined);
   const [isFilledHeart, setIsFilledHeart] = useState(false);
 
   const handlePressHeart = () => {
