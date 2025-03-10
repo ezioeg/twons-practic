@@ -1,4 +1,4 @@
-import {ImageSourcePropType} from 'react-native';
+import {Categories, Category} from '../types';
 
 export const getSecondCategoryButtonStyle = (isSelected: boolean) => ({
   backgroundColor: isSelected ? '#654321' : '#F5F5F5',
@@ -19,23 +19,11 @@ export const getSizeTextStyle = (isSelected: boolean) => ({
 });
 
 export const getProductsByCategory = (
-  category: {
-    id: number;
-    name: string;
-    products: {
-      id: number;
-      name: string;
-      description: string;
-      price: number;
-      image: ImageSourcePropType;
-      star: number;
-    }[];
-  }[],
-  selected: string,
+  categories: Categories[],
+  selectedCategoryName: Category,
 ) => {
-  const selectedCategory = category.find(cat => cat.name === selected);
-  return {
-    selectedCategory,
-    products: selectedCategory ? selectedCategory.products : [],
-  };
+  const selectedCategory = categories.find(
+    category => category.name === selectedCategoryName,
+  );
+  return selectedCategory ? selectedCategory.products : [];
 };

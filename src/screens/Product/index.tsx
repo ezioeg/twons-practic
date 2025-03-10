@@ -5,16 +5,14 @@ import Details from '../../components/Details';
 import SizeSelector from '../../components/SizeSelector';
 import ColorSelector from '../../components/ColorSelector';
 import PriceAndCartButton from '../../components/PriceAndCartButton';
+import {ProductScreenRouteParams} from '../../types';
 import styles from './styles';
-// import {ProductRouteParams} from '../../types';
 
-// {
-//   route,
-// }: {
-//   route: {params: ProductRouteParams};
-// }
-
-export default function Product({route}: {route: any}) {
+export default function Product({
+  route,
+}: {
+  route: {params: ProductScreenRouteParams};
+}) {
   const {product, category} = route.params;
 
   return (

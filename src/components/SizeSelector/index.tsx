@@ -3,10 +3,11 @@ import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {dict_product} from '../../assets/dictionary';
 import {mock_product} from '../../mock';
 import {getSizeButtonStyle, getSizeTextStyle} from '../../utils';
+import {Size} from '../../types';
 import styles from './styles';
 
 export default function SizeSelector() {
-  const [selected, setSelected] = useState('S');
+  const [selectedSize, setSelectedSize] = useState<Size>('S');
 
   return (
     <View style={styles.secondCategoryContainer}>
@@ -18,20 +19,20 @@ export default function SizeSelector() {
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.secondCategoryScrollContainer}>
-        {mock_product.sizes.map(cat => (
+        {mock_product.sizes.map(size => (
           <TouchableOpacity
-            key={cat.id}
-            onPress={() => setSelected(cat.name)}
+            key={size.id}
+            onPress={() => setSelectedSize(size.name as Size)}
             style={[
               styles.secondCategoryButton,
-              getSizeButtonStyle(selected === cat.name),
+              getSizeButtonStyle(selectedSize === size.name),
             ]}>
             <Text
               style={[
                 styles.secondCategoryTextButton,
-                getSizeTextStyle(selected === cat.name),
+                getSizeTextStyle(selectedSize === size.name),
               ]}>
-              {cat.name}
+              {size.name}
             </Text>
           </TouchableOpacity>
         ))}

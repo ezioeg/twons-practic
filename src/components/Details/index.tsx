@@ -2,9 +2,16 @@ import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {dict_product} from '../../assets/dictionary';
 import {StarIcon} from '../Icons';
+import {Category, Product} from '../../types';
 import styles from './styles';
 
-export default function Details({product, category}: any) {
+export default function Details({
+  product,
+  category,
+}: {
+  product: Product;
+  category: Category;
+}) {
   const [expandedDescription, setExpandedDescription] = useState(false);
 
   const handleExpandDescription = () => {

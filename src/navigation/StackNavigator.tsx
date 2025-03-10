@@ -2,8 +2,9 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import TabNavigator from './TabNavigator';
 import Product from '../screens/Product';
+import {RootStackParamList} from '../types';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const screenOptions = {
   headerBackImage: () => null,
